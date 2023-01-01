@@ -1,0 +1,105 @@
+<div id="site-content">
+	<header class="site-header">
+		<div class="top-header">
+			<div class="container">
+
+			</div> <!-- .contenedor del titulo y el logo -->
+		</div> <!-- termina el encabeado que contiene el fondo -->
+
+
+
+		<div class="bottom-header">
+			<div class="container">
+				<div class="main-navigation">
+					<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+					<ul class="menu">
+						<li class="menu-item"><a href="">Inicio</a></li>
+						<li class="menu-item"><a href="">Recursos</a></li>
+						<li class="menu-item"><a href="">Contactos</a></li>
+					</ul> <!-- .menu -->
+				</div> <!-- div que contiene el menu -->
+
+
+				<div class="social-links">
+					<div class="dropdown">
+						<a id="username" class="btn btn-secondary dropdown-toggle" href="#" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">
+
+							<img src={{#each user}} {{filename}}{{/each}} class="img-fluid">
+							{{#each user}}
+							{{ name }}
+							{{/each}}
+
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a class="dropdown-item" href="/auth/logout">Edital perfil</a>
+								<a class="dropdown-item" href="/auth/logout">Cerrar seción</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="mobile-navigation"></div>
+			</div>
+		</div>
+	</header> <!-- header -->
+
+	<main class="main-content">
+
+		<div class="page">
+			<div class="fullwidth-block">
+				<div class="container">
+					<h2 class="section-title">Perfil</h2>
+
+					<div class="row">
+						<div class="col-xs-12 col-sm-6 col-md-3">
+							<div class="team">
+								<figure class="team-image"><img src={{#each user}} {{filename}}{{/each}} alt=""></figure>
+								<label>Nombre de usuario:</label>
+								<h2 class="team-name">{{#each user}} {{name}}{{/each}}</h2>
+								<label >Dirección de correo:</label>
+								<small class="team-title">{{#each user}} {{email}}{{/each}}</small>
+								
+							</div> <!-- .team -->
+						</div> <!-- .col-md-3 -->
+						<div class="col-xs-12 col-sm-6 col-md-3">
+							<div >
+								
+								<label>Nombre de usuario:</label>
+								
+								
+							</div> <!-- .team -->
+						</div> <!-- .col-md-3 -->
+					</div> <!-- .row -->
+				</div> <!-- .container -->
+			</div> <!-- .fullwidth-block -->
+		</div> <!-- .page -->
+	</main>
+	<div class="site-footer">
+
+
+		<div class="bottom-footer">
+			<div class="container">
+				<nav class="footer-navigation">
+					<a href="#">Inicio</a>
+					<a href="#">Recursos</a>
+					<a href="#">Contactos</a>
+				</nav>
+
+				<div class="colophon">6to ciclo</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/app.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+	crossorigin="anonymous"></script>
+
+</body>
+
+</html>

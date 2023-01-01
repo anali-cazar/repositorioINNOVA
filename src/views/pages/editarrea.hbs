@@ -1,0 +1,168 @@
+<div id="site-content">
+    <header class="site-header">
+        <div class="top-header">
+            <div class="container">
+            </div> <!-- .contenedor del titulo y el logo -->
+        </div> <!-- termina el encabeado que contiene el fondo -->
+
+
+
+        <div class="bottom-header">
+            <div class="container">
+                <div class="main-navigation">
+                    <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+                    <ul class="menu">
+                        <li class="menu-item"><a href="">Recursos</a></li>
+                        <li class="menu-item"><a href="">Contactos</a></li>
+                    </ul> <!-- .menu -->
+                </div> <!-- div que contiene el menu -->
+
+
+
+                <div class="social-links">
+                    <div class="dropdown">
+                        <a id="username" class="btn btn-secondary dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://cdn-icons-png.flaticon.com/512/25/25634.png" class="img-fluid">
+                            {{#each user}}
+                            {{ name }}
+                            {{/each}}
+
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/auth/logout">Cerrar seción</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mobile-navigation"></div>
+            </div>
+        </div>
+
+    </header> <!-- header -->
+
+    <main class="main-content">
+        <div class="breadcrumbs">
+            <div class="container">
+                <a href="index.html">Inicio</a>
+                <span>Area de recursos educativos</span>
+            </div>
+        </div>
+
+        <div class="page">
+            <div class="container">
+                {{> messages }}
+                {{> errors }}
+                {{#each errors}}
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{text}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {{/each}}
+                <div class="row">
+                    <div class="col-md-6 mx-auto cf-container">
+                        <form action="/pages/edit-rea/{{recurso._id}}?_method=PUT" class="cuadro_REA" method="POST">
+                            <input type="hidden" name="_method" value="PUT" />
+                            <div class="cf-cover">
+                                <div class="session-title row" style="padding: 0;">
+                                    <h2>Editar datos del Recurso</h2>
+
+                                </div>
+                                <div class="form-row row">
+                                    <div class="col-md-6">
+                                        <label>Curso</label>
+                                        <select name="curso" class="form-control" required="" placeholder="Seleccione">
+                                            <option value="value1">Seleccionar</option>
+                                            <option value="Cuarto_EGB">Cuarto Grado EGB</option>
+                                            <option value="Quinto_EGB">Quinto Grado EGB</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Asignatura</label>
+                                        <select name="asignatura" class="form-control" required=""
+                                            placeholder="Seleccione">
+                                            <option value="value1">Seleccionar</option>
+                                            <option value="matematica">Matemáticas</option>
+                                            <option value="Lengua">Lengua y literatura</option>
+                                            <option value="Ciencias_naturales">Ciencias Naturales</option>
+                                            <option value="Ciencias_sociales">Ciencias Sociales</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row row">
+                                    <div class="col-md-12">
+                                        <label>Nombre del Recurso</label>
+                                        <input type="text" name="nombrerea" class="form-control"
+                                            value="{{recurso.nombrerea}}">
+                                    </div>
+
+                                </div>
+                                <div class="form-row row">
+                                    <div class="col-md-12">
+                                        <label>Link de acceso</label>
+                                        <input type="text" name="link" class="form-control" value="{{recurso.link}}">
+                                    </div>
+                                </div>
+                                <div class="form-row row">
+                                    <div class="col-md-12">
+                                        <label>Descripción</label>
+                                        <textarea name="descripcion" rows="3"
+                                            class="form-control"> {{recurso.descripcion}}</textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-row row">
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-primary w-100">Guardar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6 mx-auto cf-container" style="text-align: center;">
+                        <form action="/pages/edit-fondo-rea/{{recurso._id}}?_method=PUT" method="POST"
+                            class="cuadro_REA" enctype="multipart/form-data">
+                            <div class="col-mb-3 max-auto">
+                                <label for="description">Imagen de portada actual</label>
+                                <img src="{{recurso.filename}}" style="width: 70%; height=70%" alt="">
+                            </div>
+                            <br>
+                            <div class="col-mb-3">
+                                <label for="description">Nueva imagen de portada</label>
+                                <input type="file" name="image" placeholder="Elija una imagen" class="form-control"
+                                    accept="image/*">
+                            </div>
+                            <button class="btn btn-primary w-100" type="submit">
+                                Actualizar imagen
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+</div>
+</div> <!-- .page -->
+</main>
+
+<div class="site-footer">
+
+
+    <div class="bottom-footer">
+        <div class="container">
+            <nav class="footer-navigation">
+                <a href="#">Inicio</a>
+                <a href="#">Recursos</a>
+                <a href="#">Contactos</a>
+            </nav>
+
+            <div class="colophon">6to ciclo</div>
+        </div>
+    </div>
+</div>
+</div>

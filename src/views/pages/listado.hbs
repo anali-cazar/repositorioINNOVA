@@ -1,0 +1,116 @@
+<div id="site-content">
+        <header class="site-header">
+            <div class="top-header">
+                <div class="container">
+                  
+                </div> <!-- .contenedor del titulo y el logo -->
+            </div> <!-- termina el encabeado que contiene el fondo -->
+            <div class="bottom-header">
+                <div class="container">
+                    <div class="main-navigation">
+                        <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+                        <ul class="menu">
+                            <li class="menu-item"><a href="">Inicio</a></li>
+                            <li class="menu-item"><a href="">Recursos</a></li>
+                            <li class="menu-item"><a href="">Contactos</a></li>
+                        </ul> <!-- .menu -->
+                    </div> <!-- div que contiene el menu -->
+                </div>
+            </div>
+        </header>
+        <main class="main-content">
+            <div class="breadcrumbs">
+                <div class="container">
+                    <a href="index.html">Recursos</a>
+                    <span>Crear pregunta</span>
+                </div>
+            </div>
+            {{> messages }}
+        {{> errors }}
+            <div class="fullwidth-block greet-section">
+                <div class="container">
+
+
+    <div class="contenedor">
+        <header>
+            <h1>Crear cuestionario</h1>
+        </header>
+        <div class="contenedor-info">
+                            <nav class="nav" id="nav">
+                                <ul>
+                                    <li>
+                                        <a href="/pages/agregarpregunta/{{recurso._id}}">
+                                            <div class="icono" id="1">
+                                                <i class="fa-solid fa-question"></i>
+                                            </div>
+                                            Nueva Pregunta
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/pages/listado/{{recurso._id}}">
+                                            <div class="icono" id="2">
+                                                <i class="fa-solid fa-list"></i>
+                                            </div>
+                                            Listado Preguntas
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href=" /pages/recursosadmin">
+                                            <div class="icono" id="5">
+                                                <i class="fa-solid fa-right-from-bracket"></i>
+                                            </div>
+                                            Salir
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+            <div class="panel">
+                <h2>Listado de Preguntas</h2>
+                <hr>
+                <section id="listadoPreguntas">
+                <?php while ($row = mysqli_fetch_assoc($resultado_preguntas)) : ?>
+                    <div class="contenedor-pregunta">
+                        <header>
+                            <span class="tema"><?php echo obtenerNombreTema($row['tema'])?></span>
+                            <div class="opciones">
+                                <i class="fa-solid fa-pen-to-square" onclick="editarPregunta(<?php echo $row['id']?>)"></i>
+                                <i class="fa-solid fa-trash"" onclick="abrirModalEliminar(<?php echo $row['id']?>)"></i>
+                                
+                            </div>
+                        </header>
+                        <p class="pregunta"><?php echo $row['pregunta']?></p>
+                        <div class="opcion">
+                            <div class="caja <?php if($row['correcta']=='A'){ echo 'pintarVerde';}?>">
+                                A
+                            </div>
+                            <span class="texto"><?php echo $row['opcion_a']?></span>
+                        </div>
+                        <div class="opcion">
+                            <span class="caja <?php if($row['correcta']=='B'){ echo 'pintarVerde';}?>">B</span>
+                            <span class="texto"><?php echo $row['opcion_b']?></span>
+                        </div>
+                        <div class="opcion">
+                            <span class="caja <?php if($row['correcta']=='C'){ echo 'pintarVerde';}?>">C</span>
+                            <span class="texto"><?php echo $row['opcion_c']?></span>
+                        </div>
+                    </div>
+                    
+                <?php endwhile ?>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- The Modal para la eliminación de una Pregunta -->
+    <div id="modalPregunta" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <p>¿Esta seguro que desea eliminar la Pregunta?</p>
+            <button onclick="eliminarPregunta()" class="btn">Si</button>
+            <button onclick="cerrarEliminar()" class="btn">Cancelar</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>paginaActiva(2);</script>   
+</body>
+</html>

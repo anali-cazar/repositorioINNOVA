@@ -1,0 +1,110 @@
+
+    <div id="site-content">
+        <header class="site-header">
+            <div class="top-header">
+                <div class="container">
+                  
+                </div> <!-- .contenedor del titulo y el logo -->
+            </div> <!-- termina el encabeado que contiene el fondo -->
+            <div class="bottom-header">
+                <div class="container">
+                    <div class="main-navigation">
+                        <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+                        <ul class="menu">
+                            <li class="menu-item"><a href="">Inicio</a></li>
+                            <li class="menu-item"><a href="">Recursos</a></li>
+                            <li class="menu-item"><a href="">Contactos</a></li>
+                        </ul> <!-- .menu -->
+                    </div> <!-- div que contiene el menu -->
+                </div>
+            </div>
+        </header>
+        <main class="main-content">
+            <div class="breadcrumbs">
+                <div class="container">
+                    <a href="index.html">Recursos</a>
+                    <span>Crear pregunta</span>
+                </div>
+            </div>
+            {{> messages }}
+        {{> errors }}
+            <div class="fullwidth-block greet-section">
+                <div class="container">
+                    <div class="contenedor">
+                        <div class="contenedor-info">
+                            <nav class="nav" id="nav">
+                                <ul>
+                                    <li>
+                                        <button href="/pages/agregarpregunta/{{recurso._id}}" class="botonjuego">
+                                            <div class="icono" id="1">
+                                                <i class="fa-solid fa-question"></i>
+                                            </div>
+                                            Nueva Pregunta
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <a href="/pages/listado/{{recurso._id}}">
+                                            <div class="icono" id="2">
+                                                <i class="fa-solid fa-list"></i>
+                                            </div>
+                                            Listado Preguntas
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href=" /pages/recursosadmin">
+                                            <div class="icono" id="5">
+                                                <i class="fa-solid fa-right-from-bracket"></i>
+                                            </div>
+                                            Salir
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="panel">
+                                <h2>Crear cuestionario</h2>
+                                <hr>
+                                <section id="nuevaPregunta">
+                                    <form action="/pages/agregarpregunta/{{recurso._id}}?_method=PUT" method="POST">
+                                        <div class="fila">
+                                            </select>
+                                            <span class="agregarTema">
+                                                <i class="fa-solid fa-circle-plus"></i></span>
+                                        </div>
+                                        <div class="fila">
+                                            <label for="">Escribir pregunta:</label>
+                                            <textarea name="pregunta" id="" cols="30" rows="10" required></textarea>
+                                        </div>
+                                        <div class="opciones">
+                                            <div class="opcion">
+                                                <label for="">Opción A</label>
+                                                <input type="text" name="opcion_a" id="" required>
+                                            </div>
+                                            <div class="opcion">
+                                                <label for="">Opción B</label>
+                                                <input type="text" name="opcion_b" required>
+                                            </div>
+                                            <div class="opcion">
+                                                <label for="">Opción C</label>
+                                                <input type="text" name="opcion_c" required>
+                                            </div>
+                                        </div>
+                                        <div class="opcion">
+                                            <label for="">Correcta</label>
+                                            <select name="correcta" id="" class="correcta">
+                                                <option value="A">A</option>
+                                                <option value="B">B</option>
+                                                <option value="C">C</option>
+                                            </select>
+                                        </div>
+                                        <hr>
+                                        <input type="submit"  name="guardar" class="btn-guardar">
+                                    </form>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>

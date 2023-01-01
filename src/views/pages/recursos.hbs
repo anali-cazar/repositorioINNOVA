@@ -1,0 +1,104 @@
+<div id="site-content">
+	<header class="site-header">
+		<div class="top-header">
+			<div class="container">
+			</div> <!-- .contenedor del titulo y el logo -->
+		</div> <!-- termina el encabezado que contiene el fondo -->
+		<div class="bottom-header">
+			<div class="container">
+				<div class="main-navigation">
+					<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+					<ul class="menu">
+						<li class="menu-item"><a href="">Inicio</a></li>
+						<li class="menu-item"><a href="">Contactos</a></li>
+					</ul> <!-- .menu -->
+				</div> <!-- div que contiene el menu -->
+				<div class="social-links">
+					<div class="dropdown">
+						<a id="username" class="btn btn-secondary dropdown-toggle" href="#" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">
+							<img src="https://cdn-icons-png.flaticon.com/512/25/25634.png" class="img-fluid">
+							{{#each user}}
+							{{ name }}
+							{{/each}}
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="/auth/logout">Cerrar seción</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="mobile-navigation"></div>
+			</div>
+		</div>
+	</header> <!-- header -->
+
+	<main class="main-content">
+		<div class="breadcrumbs">
+			<div class="container">
+				<a href="index.html">Inicio</a>
+				<span>Area de recursos educativos</span>
+			</div>
+		</div>
+		<div class="page">
+			<div class="container">
+				{{> messages }}
+				{{> errors }}
+				<h3 class="entry-title">Recursos Educativos</h3>
+				<p>Uba herramienta para fortalecer tus conocimientos</p>
+				<div class="filter-links filterable-nav">
+					<select class="mobile-filter">
+						<option value="*">Todos</option>
+						<option value=".Ciencias_naturales">categoria1</option>
+						<option value=".Ciencias_sociales">categoria2</option>
+						<option value=".Lengua">categoria3</option>
+						<option value=".matematica">categoria4</option>
+					</select>
+					<strong>Seleccionar categorias: </strong>
+					<a href="#" class="current wow fadeInRight" data-filter="*">Todos</a>
+					<a href="#" class="wow fadeInRight" data-wow-delay=".2s" data-filter=".Ciencias_naturales">Ciencias
+						Naturales</a>
+					<a href="#" class="wow fadeInRight" data-wow-delay=".4s" data-filter=".Ciencias_sociales">Ciencias
+						Sociales</a>
+					<a href="#" class="wow fadeInRight" data-wow-delay=".6s" data-filter=".Lengua">Lengua y
+						Literatura</a>
+					<a href="#" class="wow fadeInRight" data-wow-delay=".8s" data-filter=".matematica">Matemáticas</a>
+				</div>
+				<div class="filterable-items" id="recursos">
+					{{#each recursos}}
+					<div class="insurance-item filterable-item {{ asignatura }}">
+						<div class="insurance-content" style="background-image: url('{{filename}}');  background-repeat: no-repeat;
+  background-size: cover;">
+							</br>
+							<div class="insurance-icon"><i class="bi bi-box-arrow-in-up-right"></i></div>
+							<h3 class="insurance-title  fw-bold">{{nombrerea}}</h3>
+							<p>{{descripcion}}
+							</p>
+							<a href="{{link}}" target="_blank" class="button">Abrir REA</a>
+							<a href="#" target="_blank" class="button ">Ir a evaluación</a>
+						</div>
+					</div>
+					{{else}}
+					<div class="card mx-auto">
+						<div class="card-body">
+							<h1>No se han agregado recurso todavia</h1>
+						</div>
+					</div>
+					{{/each}}
+
+				</div>
+			</div>
+		</div> <!-- .page -->
+	</main>
+	<div class="site-footer">
+		<div class="bottom-footer">
+			<div class="container">
+				<nav class="footer-navigation">
+					<a href="#">Inicio</a>
+					<a href="#">Recursos</a>
+					<a href="#">Contactos</a>
+				</nav>
+				<div class="colophon">6to ciclo</div>
+			</div>
+		</div>
+	</div>
+</div>

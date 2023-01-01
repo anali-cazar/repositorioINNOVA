@@ -1,0 +1,53 @@
+
+.cuadro_REA {
+    background-image: url(/images/patter.png);
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 20px;
+    }
+    .cuadro_REA2 {
+      background-image: url(/images/patter.png);
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        box-shadow: 4px 7px 15px #000;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 20px;
+      }
+    .session-title {
+      margin: 0px;
+    }
+    .session-title h2 {
+      width: 100%;
+      text-align: center;
+      font-size: 1.8rem;
+    }
+    .session-title p {
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    
+    .cf-container {
+      margin-top: 2%;
+    }
+    .cf-container .form-row {
+      margin-bottom: 20px;
+    }
+    .cf-container .form-row label {
+      font-weight: 600;
+      font-size: 0.93rem;
+      margin-bottom: 4px;
+    }
+    .cf-container .form-row .form-control {
+      border-radius: 0px;
+      background-color: rgba(234, 233, 233, 0.78);
+    }
+    .cf-container .agre p {
+      font-size: 0.9rem;
+    }
+    

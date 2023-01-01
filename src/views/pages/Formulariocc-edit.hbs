@@ -1,0 +1,82 @@
+<div id="site-content">
+    <header class="site-header">
+        <div class="top-header">
+            <div class="container">
+
+            </div> <!-- .contenedor del titulo y el logo -->
+        </div> <!-- termina el encabeado que contiene el fondo -->
+
+    </header>
+    <main class="main-content">
+        <div class="breadcrumbs">
+            <div class="container">
+                <a href="index.html">Ayuda</a>
+                <span>Recuperar Contraseña editar</span>
+            </div>
+        </div>
+        {{> messages }}
+        {{> errors }}
+        <div class="fullwidth-block greet-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mx-auto cf-container">
+                         <form action="/pages/Formulariocc-edit/{{#each userFound}}{{_id}}{{/each}}?_method=PUT" class="cuadro_REA" method="POST">
+                            <input type="hidden" name="_method" value="PUT" />
+                            <div class="cf-cover">
+                                <div class="text-center mb-4">
+                                    <h2>Nueva contraseña</h2>
+                                </div>
+                                <div class="form-row row">
+                                    <div class="col-md-12">
+                                        <label>Nombre de usuario: </label>
+                                        <label>{{#each userFound}}
+                                            {{ name }}
+                                            {{/each}}</label>
+
+                                    </div>
+                                </div>
+                                <div class="form-row row">
+                                    <div class="col-md-12">
+                                        <label>Ingrese su nueva contraseña</label>
+                                        <input type="password" placeholder="********" name="password"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-row row">
+                                    <div class="col-md-12">
+                                        <label>Confirmar contraseña</label>
+                                        <input type="password" placeholder="********" name="confirm_password"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-row row">
+                                    <div class="col-md-6">
+                                        <button type="submit" class="btn btn-primary w-100">Guardar</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a href='/' class="btn btn-primary w-100">cancelar</a>
+                                    </div>
+                                </div>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="site-footer">
+
+
+        <div class="bottom-footer">
+            <div class="container">
+                <nav class="footer-navigation">
+                    <a href="#">Inicio</a>
+                    <a href="#">Recursos</a>
+                    <a href="#">Contactos</a>
+                </nav>
+
+                <div class="colophon">6to ciclo</div>
+            </div>
+        </div>
+    </div>
+</div>
