@@ -12,7 +12,7 @@ import { isAuthenticated } from "../helpers/auth.js";
 const router = Router();
 
 // cargar paginas
-router.get("/profile/perfil", isAuthenticated, renderprofile );
+router.get("/profile/perfil/:id", isAuthenticated, renderprofile );
 router.get("/pages/FormularioREA", isAuthenticated, renderREAForm );
 router.post("/pages/FormularioREA", isAuthenticated, createNewREA);
 // borrar rea
