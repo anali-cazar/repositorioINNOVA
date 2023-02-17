@@ -15,8 +15,10 @@ import indexRoutes from "./routes/index.routes.js";
 import userRoutes from "./routes/auth.routes.js";
 import pagesRoutes from "./routes/pages.routes.js";
 import profileRoutes from "./routes/profile.routes.js";
+import helpers from 'handlebars-helpers';
 import "./config/passport.js";
 import path from "path";
+import toastr from 'express-toastr';
 // Initializations
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -30,6 +32,7 @@ const hbs = exphbs.create({
   defaultLayout: "main",
   layoutsDir: join(app.get("views"), "layouts"),
   partialsDir: join(app.get("views"), "partials"),
+  helpers: helpers(),
   extname: ".hbs",
 });
 app.engine(".hbs", hbs.engine);
@@ -42,12 +45,12 @@ app.use(express.urlencoded({ extended: false }));
 const storage = multer.diskStorage({
   destination: path.join(__dirname, 'public/img/uploads'),
   filename: (req, file, cb, filename) => {
-      console.log(file);
+      
       cb(null, uuidv4()+ path.extname(file.originalname));
   }
 
-}) 
-app.use(multer({storage}).single('image'));
+});
+app.use(multer({storage}).fields([{ name: 'image' }, { name: 'compress' }]));
 app.use(methodOverride("_method"));
 app.use(
   session({
@@ -60,6 +63,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
+app.use(toastr());
 
 // Global Variables
 app.use((req, res, next) => {
@@ -68,6 +72,7 @@ app.use((req, res, next) => {
   res.locals.error_msg = req.flash("error_msg");
   res.locals.error = req.flash("error");
   res.locals.user = req.user;
+  res.locals.toastr = req.toastr.render();
   next();
 });
 

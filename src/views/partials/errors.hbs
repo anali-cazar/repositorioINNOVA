@@ -1,23 +1,24 @@
 {{#if error}}
-  <div class="alert alert-danger alert-dismissible fade show" role="alert">
-    {{error}}
-    <button
+  <div class="alert danger-alert" style="
+    width: 500px;">
+  <h5>{{error}} Credenciales incorrectas</h5>
+  <button
       type="button"
       class="btn-close"
       data-bs-dismiss="alert"
       aria-label="Close"
-    ></button>
-  </div>
+    >&times;</button>
+</div>
 {{/if}}
 
 {{#each errors}}
-  <div class="alert alert-danger alert-dismissible fade show" role="alert">
-    {{text}}
-    <button
+<div class="alert danger-alert">
+ <h3>{{text}}</h3>
+  <button
       type="button"
       class="btn-close"
       data-bs-dismiss="alert"
       aria-label="Close"
-    ></button>
-  </div>
+    >&times;</button>
+</div>
 {{/each}}

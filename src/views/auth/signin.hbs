@@ -1,104 +1,52 @@
-<div id="site-content">
-			<header class="site-header">
-				<div class="top-header">
-					<div class="container">
-		
-					</div> <!-- .contenedor del titulo y el logo -->
-				</div> <!-- termina el encabeado que contiene el fondo -->
-
-				<div class="bottom-header">
-					<div class="container">
-						<div class="main-navigation">
-							<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
-							<ul class="menu">
-								<li class="menu-item"><a href="">Inicio</a></li>
-								<li class="menu-item"><a href="">Contactos</a></li>
-							</ul> <!-- .menu -->
-						</div> <!-- div que contiene el menu -->
-						
-		
-						<div class="social-links">
-							<div class="dropdown">
-								<a id="username" class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-									<img src="https://cdn-icons-png.flaticon.com/512/25/25634.png" class="img-fluid"> 
-									<?php 
-									echo "$usuario";
-									?>
-								</a>
-							  
-								<ul class="dropdown-menu">
-								  <li><a class="dropdown-item" href="cerrarsesion.php">Cerrar seción</a></li>
-								</ul>
-							  </div>
-						</div>
-						
-						<div class="mobile-navigation"></div>
-					</div>
-				</div>
-				
-			</header> <!-- header -->
-
-			<main class="main-content">
-				<div class="breadcrumbs">
-					<div class="container">
-						<a href="index.html">Inicio</a>
-						<span>Area de recursos educativos</span>
-					</div>
-				</div>
-
-				<div class="page">
-					<div class="container">
-						<h3 class="entry-title">Recursos Educativos</h3>
-						<p>Uba herramienta para fortalecer tus conocimientos</p>
-
-						<div class="filter-links filterable-nav">
-							<select class="mobile-filter">
-								<option value="*">Todos</option>
-								<option value=".Ciencias_naturales">categoria1</option>
-								<option value=".Ciencias_sociales">categoria2</option>
-								<option value=".Lengua">categoria3</option>
-								<option value=".matematica">categoria4</option>
-							</select>
-							<strong>Seleccionar categorias: </strong>
-							<a href="#" class="current wow fadeInRight" data-filter="*">Todos</a>
-							<a href="#" class="wow fadeInRight" data-wow-delay=".2s" data-filter=".Ciencias_naturales">Ciencias Naturales</a>
-							<a href="#" class="wow fadeInRight" data-wow-delay=".4s" data-filter=".Ciencias_sociales">Ciencias Sociales</a>
-							<a href="#" class="wow fadeInRight" data-wow-delay=".6s" data-filter=".Lengua">Lengua y Literatura</a>
-							<a href="#" class="wow fadeInRight" data-wow-delay=".8s" data-filter=".matematica">Matemáticas</a>
-						</div>
-
-						<div class="filterable-items">
-							<div class="insurance-item filterable-item Ciencias_naturales">
-								<div id="rea1" class="insurance-content">
-									</br>
-									<div class="insurance-icon"><i class="fas fa-gamepad"></i></div>
-									<h3 class="insurance-title">Ayudemos a los animales</h3>
-									<p>Recurso Educativo Abierto que aborda la temática animales vertebrados e invertebrados </p>
-									<a href="http://aprende-a-jugar.surge.sh/" target="_blank" class="button">Ir a recurso</a>
-									<a href="#" target="_blank" class="button">Ir a evaluación</a>
-								</div>
-							</div>
-
-						</div>
-
-						
-					</div>
-				</div> <!-- .page -->
-			</main>
-
-			<div class="site-footer">
-				
-
-				<div class="bottom-footer">
-					<div class="container">
-						<nav class="footer-navigation">
-							<a href="#">Inicio</a>
-							<a href="#">Recursos</a>
-							<a href="#">Contactos</a>
-						</nav>
-
-						<div class="colophon">6to ciclo</div>
-					</div>
-				</div>
-			</div>
-		</div>
+ 
+  <main class="main-content  mt-0">
+     
+    <section>
+      <div class="page-header min-vh-100">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-0 mx-auto">
+              {{> messages }}
+				{{> errors }}
+        {{{ toastr }}}
+              <div class="card card-plain">
+                <div class="card-header pb-0 text-start">
+                  <h4 class="font-weight-bolder">Iniciar Sesión</h4>
+                  <p class="mb-0">Ingrese su correo y contraseña para iniciar sesión</p>
+                </div>
+                <div class="card-body">
+                  <form role="form" action="/auth/signin" method="POST">
+                    <div class="mb-3">
+                      <input type="text" name="email" class="form-control form-control-lg" placeholder="Correo" aria-label="Email">
+                    </div>
+                    <div class="mb-3">
+                      <input type="password" name="password" class="form-control form-control-lg" placeholder="Contraseña" aria-label="Password">
+                    </div>
+                   
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Acceder</button>
+					  <a type="button" href="/" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Volver</a>
+                    </div>
+                  </form>
+                </div>
+                <div class="card-footer text-center pt-0 px-lg-2 px-1">
+                  <p class="mb-4 text-sm mx-auto">
+                    ¿Olvidaste tu contraseña?
+                    <a href="/pages/Formulariocc" class="text-primary text-gradient font-weight-bold">Recuperarla</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
+              <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('/assets/img/5437683.jpg');
+          background-size: cover;">
+                <span class="mask bg-gradient-primary opacity-6"></span>
+                <h4 class="mt-5 text-white font-weight-bolder position-relative">"Bienvenido al repositorio INNOVA"</h4>
+                <p class="text-white position-relative">Un espacio donde encontrarás recursos educativos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>

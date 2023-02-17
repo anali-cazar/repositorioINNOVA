@@ -1,11 +1,6 @@
 import { Router } from "express";
 import passport from "passport";
-import {
-  renderSignUpForm,
-  signup,
-  renderSigninForm,
-  logout,
-} from "../controllers/auth.controllers.js";
+import { renderSignUpForm, signup, renderSigninForm, logout,} from "../controllers/auth.controllers.js";
 
 const router = Router();
 
@@ -21,7 +16,7 @@ router.get("/auth/logout", logout);
 router.post(
   "/auth/signin",
   passport.authenticate('local', {
-    failureRedirect: '/',failureFlash: true,
+    failureRedirect: '/auth/signin',failureFlash: true,
   }), (req, res) => {
     if (req.user.tipo =="estudiante") {
       res.redirect('/pages/recursos');
@@ -30,8 +25,6 @@ router.post(
       res.redirect('/pages/recursosadmin');
     }
   });
-
-
 
 
 export default router;

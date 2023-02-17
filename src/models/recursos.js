@@ -27,8 +27,11 @@ const NoteSchema = new mongoose.Schema(
     },
     filename: { type: String 
     },
-    public_id:{
-      type: String 
+    path: { type: String 
+    },
+    compress: { type: String 
+    },
+    pathcompress: { type: String 
     },
   },
   {

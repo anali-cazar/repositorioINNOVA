@@ -5,6 +5,8 @@ const UserSchema = new mongoose.Schema(
   {
     name: { type: String, trim: true },
     tipo: { type: String, trim: true },
+    grado: { type: String, trim: true },
+    paralelo: { type: String, trim: true },
     email: { type: String, required: true, unique: true, trim: true },
     password: { type: String, required: true },
     filename: { type: String 
@@ -28,4 +30,4 @@ UserSchema.methods.matchPassword = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
 
-export default mongoose.model("User", UserSchema);
+export default mongoose.model("user", UserSchema);

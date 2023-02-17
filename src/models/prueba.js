@@ -17,10 +17,6 @@ const PruebaSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    correcta: {
-      type: String,
-      required: true,
-    },
     user: {
       type: String,
       required: true,
@@ -29,11 +25,13 @@ const PruebaSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    correcta: {
+      type: String,
+      required: true,
+    },
+   
   },
-  {
-    versionKey: false,
-    timestamps: true,
-  }
+  
 );
 
 

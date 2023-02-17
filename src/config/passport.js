@@ -11,16 +11,14 @@ passport.use(
     async (email, password, done) => {
       // Match Email's User
       const user = await User.findOne({ email: email });
-
       if (!user) {
         return done(null, false, { message: "email incorrecto" });
       }
-
       // Match Password's User
       const isMatch = await user.matchPassword(password);
-      if (!isMatch)
+      if (!isMatch){
         return done(null, false, { message: "Contraseña incorrecta" });
-      
+      }
       return done(null, user);
     }
   )
