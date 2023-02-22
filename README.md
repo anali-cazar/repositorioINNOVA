@@ -1,7 +1,7 @@
 # Repositorio INNOVA
-Es un proyecto construido dentro en la Universidad Nacional de Loja de la carrera de pedagogía de las ciencias experimentales - informática, para la asignatura de programación web. El proyecto consiste en un repositorio de recursos educativos abiertos (REA) con usuarios externos para la página principal y estudiantes y docentes de la unidad educativa sta mariana de Jesús, estos últimos podrán acceder al repositorio mediante la auténticacion de sus datos (correo y contraseña) y acceder a opciones más personalizadas, en el caso de docentes se mostrarán botones para  ingresar REA, eliminar REA, crear evaluaciones o visualizar calificaciones, y los estudiantes podrán acceder o descargar un Rea, realizar la evaluación y visualizar su calificación:
+Es un proyecto construido dentro en la Universidad Nacional de Loja de la carrera de pedagogía de las ciencias experimentales - informática, para la asignatura de programación web. El proyecto consiste en un repositorio de recursos educativos abiertos (REA) con usuarios externos para la página principal y estudiantes y docentes de la unidad educativa sta Mariana de Jesús, estos últimos podrán acceder al repositorio mediante la auténticacion de sus datos (correo y contraseña) y acceder a opciones más personalizadas, en el caso de docentes se mostrarán botones para  ingresar REA, eliminar REA, crear evaluaciones o visualizar calificaciones, y los estudiantes podrán acceder o descargar un REA, realizar la evaluación y visualizar su calificación:
 Consideraciones para poder ejecutar el proyecto:
-1. Tener instalado node.js 
-2. Abrir el terminal e ingresar el comando npm start que instalará todas las dependencias a usar
-3. Con el comando npm rum star, el mismo ayudaria a dar ejecución del proyetco o sino dirigirse al archivo package.json entre la línea 6 y 7 dar clic en la palabra Depurar. 
+1. Tener instalado node.js.
+2. Abrir el terminal e ingresar el comando npm start que instalará todas las dependencias a usar.
+3. Para ejecutar el aplicativo se puede hacerediante el terminal con el comando npm rum star O dirigiendose al archivo package.json entre la línea 6 y 7 haciendo clic en el botón depurar.
 4. En el navegador ingresar el enlace http://localhost:4000/, a continuación se mostrará el aplicativo. 
