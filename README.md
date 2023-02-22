@@ -1,6 +1,7 @@
 # Repositorio INNOVA
-Es un proyecto construido en la Universidad Nacional de Loja en la Carrera de Pedagogía Ciencias Experimentales - Informática en la asignatura de Programación Web. 
-1. Instala node.js 
-2. Antes de inicar se debe dar clic en terminal y selecionar la opción de Nuevo Terminal, continuando debera escribir la siguiente linea de codigo "npm star, la cual ayuda a instalarse de manera automáticamente todas dependencias. 
-3. Con el comando npm rum star, el mismo ayudaria a dar ejecución del proyetco. 
-4. Dirigirse al navegador y escribir http://localhost:4000/ y podra revisar que se encuentra en el repositorio. 
+Es un proyecto construido dentro en la Universidad Nacional de Loja de la carrera de pedagogía de las ciencias experimentales - informática, para la asignatura de programación web. El proyecto consiste en un repositorio de recursos educativos abiertos (REA) con usuarios externos para la página principal y estudiantes y docentes de la unidad educativa sta mariana de Jesús, estos últimos podrán acceder al repositorio mediante la auténticacion de sus datos (correo y contraseña) y acceder a opciones más personalizadas, en el caso de docentes se mostrarán botones para  ingresar REA, eliminar REA, crear evaluaciones o visualizar calificaciones, y los estudiantes podrán acceder o descargar un Rea, realizar la evaluación y visualizar su calificación:
+Consideraciones para poder ejecutar el proyecto:
+1. Tener instalado node.js 
+2. Abrir el terminal e ingresar el comando npm start que instalará todas las dependencias a usar
+3. Con el comando npm rum star, el mismo ayudaria a dar ejecución del proyetco o sino dirigirse al archivo package.json entre la línea 6 y 7 dar clic en la palabra Depurar. 
+4. En el navegador ingresar el enlace http://localhost:4000/, a continuación se mostrará el aplicativo. 
